@@ -8,7 +8,6 @@ import streamlit.components.v1 as components
 import pydeck as pdk
 import warnings
 warnings.filterwarnings('ignore')
-from bokeh.plotting import figure
 import plotly.express as px
 import os
 import datetime
