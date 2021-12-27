@@ -59,7 +59,7 @@ def meteo_02():
         components.iframe("https://theweatherpartner.xyz/martav/DC102/caudal+precip.html", height=800)
 
     with col2:
-        path = "/Users/34691/Desktop/TWP/AppTimeLapse/meteo_precip_v2.csv"
+        path = "meteo_precip_v2.csv"
         df = pd.read_csv(path)
         lat = st.slider("Selecciona la latitud:", min_value=round(min(df.Latitude),2), max_value=round(max(df.Latitude),2))
     with col3:
@@ -105,7 +105,7 @@ def meteo_02():
 
 def meteo_03():
     st.title('Pronóstico de mañana')
-    path = "/Users/34691/Desktop/TWP/AppTimeLapse/meteo_03.csv"
+    path = "meteo_03.csv"
     df = pd.read_csv(path)
     when = st.select_slider('Selecciona el momento del dia:',options=['mañana','mediodia','tarde','noche'])
     col1, col2, col3 = st.columns((2,1,1))
@@ -247,7 +247,7 @@ def meteo_04():
 def hidro_01():
     st.title('Comparación de los distintos modelos')
     st.write('En construcción')
-    path = '/Users/34691/Desktop/TWP/AppTimeLapse/sitios_toma_02.csv'
+    path = 'sitios_toma_02.csv'
     df = pd.read_csv(path)
     st_list=list(dict.fromkeys(list(df.Nombre)))
     pois = st.multiselect('Selecciona los sitios toma', st_list)
@@ -286,7 +286,7 @@ def hidro_01():
 def hidro_02():
     st.title('Caudal con WRF-Hydro')
 
-    path = '/Users/34691/Desktop/TWP/AppTimeLapse/sitios_toma_02.csv'
+    path = 'sitios_toma_02.csv'
     df = pd.read_csv(path)
     st_list=list(dict.fromkeys(list(df.Nombre)))
     pois = st.multiselect('Selecciona los sitios toma', st_list)
@@ -320,7 +320,7 @@ def hidro_02():
 def hidro_03():
     st.title('Caudal con HMS')
 
-    path = '/Users/34691/Desktop/TWP/AppTimeLapse/sitios_toma_02.csv'
+    path = 'sitios_toma_02.csv'
     df = pd.read_csv(path)
     st_list=list(dict.fromkeys(list(df.Nombre)))
     pois = st.multiselect('Selecciona los sitios toma', st_list)
@@ -354,7 +354,7 @@ def hidro_03():
 def hidro_04():
     st.title('Caudal con Tetis')
 
-    path = '/Users/34691/Desktop/TWP/AppTimeLapse/sitios_toma_02.csv'
+    path = 'sitios_toma_02.csv'
     df = pd.read_csv(path)
     st_list=list(dict.fromkeys(list(df.Nombre)))
     pois = st.multiselect('Selecciona los sitios toma', st_list)
@@ -1563,7 +1563,7 @@ def download():
     )
 
     if types == 'Meteorologicos':
-        path = "/Users/34691/Desktop/TWP/AppTimeLapse/meteo_precip_v2.csv"
+        path = "meteo_precip_v2.csv"
         df = pd.read_csv(path)
         col1, col2= st.columns((2))
 
@@ -1589,7 +1589,7 @@ def download():
             st.table(filtered)
 
     if types == 'Hidrologicos':
-        path = '/Users/34691/Desktop/TWP/AppTimeLapse/sitios_toma_02.csv'
+        path = 'sitios_toma_02.csv'
         df = pd.read_csv(path)
 
         st_list=list(dict.fromkeys(list(df.Nombre)))
